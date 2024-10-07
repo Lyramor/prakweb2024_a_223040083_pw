@@ -11,15 +11,6 @@ class Produk {
   }
 }
 
-// $produk1 = new Produk ();
-// $produk1 -> judul = "Naruto";
-// var_dump($produk1);
-
-// $produk2 = new Produk();
-// $produk2 -> judul = "Uncharted";
-// $produk2 -> penulis = "Marsa";
-// var_dump($produk2)
-
 $produk3 = new Produk();
 $produk3->judul = "Naruto";
 $produk3->penulis = "Masashi Kisimoto";
