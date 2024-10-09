@@ -21,6 +21,7 @@ class Coba {
 
 $obj = new Coba;
 echo $obj->kelas;
+
 echo "<hr>";
 echo __LINE__;
 echo "<hr>";
