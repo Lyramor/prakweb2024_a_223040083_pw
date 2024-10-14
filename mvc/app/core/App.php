@@ -1,5 +1,6 @@
 <?php 
 
+
 class App
 {
     protected $controller = 'Home';
@@ -10,6 +11,7 @@ class App
     {
         $url = $this->parseURL();
 
+        // Check if $url is an array and $url[0] is set
         if ($url && isset($url[0])) {
             //controller
             if (file_exists('../app/controllers/' . $url[0] . '.php')) {
@@ -18,7 +20,7 @@ class App
             }
         }
 
-        //memanggil controller
+        // Require the controller file
         require_once '../app/controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller;
 
@@ -41,12 +43,14 @@ class App
     public function parseURL()
     {
         if (isset($_GET['url'])) {
-            $url = rtrim($_GET['url'], '/');
-            $url = filter_var($url, FILTER_SANITIZE_URL);
-            return explode('/', $url);
+            $url = rtrim($_GET['url'], '/'); // Menghilangkan slash di akhir URL
+            $url = filter_var($url, FILTER_SANITIZE_URL); // Sanitasi URL
+            return explode('/', $url); // Pecah URL menjadi array
         }
-        return [];  
+        return []; // Jika tidak ada 'url' di $_GET, kembalikan array kosong
     }
 }
+
+
 
 ?>
